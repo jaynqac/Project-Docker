@@ -1,4 +1,4 @@
-FROM myjava:latest
+FROM projectdocker_myjava:latest
 MAINTAINER jaynpham
 
 RUN apt-get update && apt-get install -y wget
