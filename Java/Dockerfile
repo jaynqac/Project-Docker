@@ -9,7 +9,7 @@ RUN apt-get install -y wget
 WORKDIR /opt
 RUN wget http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
 # extract java
-RUN tar -zxvf jdk-8u112-linux-x64.tar.gz
+RUN tar -xvf jdk-8u112-linux-x64.tar.gz
 
 # install java
 RUN update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_112/bin/java 100
