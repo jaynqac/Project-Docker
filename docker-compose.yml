@@ -1,0 +1,6 @@
+build: 
+
+build: ./java
+ context: https://github.com/jaynqac/Project-Docker/blob/master/Java/Dockerfile 
+ args:
+  buildno: 1
