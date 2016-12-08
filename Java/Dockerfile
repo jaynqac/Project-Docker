@@ -7,8 +7,7 @@ RUN apt-get install -y wget
 
 # download java tarball from the internet and store in /opt
 WORKDIR /opt
-RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-put/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
-
+RUN wget http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
 # extract java
 RUN tar zxvf jdk-8u112-linux-x64.tar.gz
 
