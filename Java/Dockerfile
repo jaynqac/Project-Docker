@@ -7,7 +7,7 @@ RUN apt-get install -y wget
 
 # download java tarball from the internet and store in /opt
 WORKDIR /opt
-RUN wget http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
+RUN wget -O http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
 # extract java
 RUN tar -zxvf jdk-8u112-linux-x64.tar.gz
 
