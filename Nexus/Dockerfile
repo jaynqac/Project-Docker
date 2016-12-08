@@ -1,4 +1,4 @@
-FROM myjava:latest
+FROM projectdocker_myjava:latest
 MAINTAINER jaynpham
 #user root
 
