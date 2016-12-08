@@ -1,6 +1,37 @@
-build: 
+#version 1.9
 
-build: ./java
- context: https://github.com/jaynqac/Project-Docker/blob/master/Java/Dockerfile 
- args:
-  buildno: 1
+myjava:
+ build: ./Java
+  tty: true
+
+myjira:
+ build: ./Jira
+ tty: true
+ ports: 
+  - 8083:8080
+ tty: true
+
+myjenkins:
+ build: ./Jenkins
+ links:
+  - myjava
+ ports:
+  - 8086:8080
+ tty: true
+
+mytomcat:
+ build: ./TomCat
+ links:
+  - myjava
+ ports:
+  - 8090:8080
+ tty: true
+
+mynexus:
+ build: ./Nexus
+ links:
+  - myjava
+ ports: 
+  - 8012:8081
+ tty: true
+ 
