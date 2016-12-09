@@ -16,7 +16,7 @@
 Tools configured:
   - Java ( base image )
   - Jenkins
-  - Jira
+  - Jira (does not load for some reason)
   - Nexus
   - TomCat
   - Zabbix (broken)
