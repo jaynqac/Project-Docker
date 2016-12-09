@@ -5,9 +5,9 @@ RUN apt-get update
 RUN apt-get install -y wget
 RUN apt-get update -y \
 && apt-get install -y debconf-utils \
- apache2 \
- mysql-client \
- php7.0-mysql php7.0-curl php7.0-json php7.0-cgi php7.0 libapache2-mod-php7.0 php7.0-bcmath php7.0-mbstring php7.0-xml
+apache2 \
+mysql-client \
+php7.0-mysql php7.0-curl php7.0-json php7.0-cgi php7.0 libapache2-mod-php7.0 php7.0-bcmath php7.0-mbstring php7.0-xml
 
 RUN sed -i 's:;date.timezone =:date.timezome = UTC:g' /etc/php/7.0/apache2/php.ini
 
