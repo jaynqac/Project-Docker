@@ -38,10 +38,10 @@ RUN service mysql start \
 WORKDIR /etc/zabbix/
 EXPOSE 8082:80
 
-RUN sed -i  '/# DBHost=/c\DBHost=localhost' zabbix_server.conf \
-&& sed -i '/DBName=zabbix/c\DBName=zabbixdb' zabbix_server.conf \
-&& sed -i  '/# DBPassword=/c\DBPassword=zabbix' zabbix_server.conf \
-&& sed -i '/#DBPort=/c\DBPort=3306'
+RUN sed -i  's/# DBHost=/DBHost=localhost/g' zabbix_server.conf \
+&& sed -i 's/DBName=zabbix/DBName=zabbixdb/g' zabbix_server.conf \
+&& sed -i  's/# DBPassword=/DBPassword=zabbix/g' zabbix_server.conf \
+&& sed -i 's/#DBPort=/DBPort=3306/g'
 
 RUN service apache2 restart && service zabbix-server restart
 
