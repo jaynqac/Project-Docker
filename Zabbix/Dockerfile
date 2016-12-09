@@ -33,19 +33,11 @@ RUN sed -i 's:;date.timezone =:date.timezome = UTC:g' /etc/php/7.0/apache2/php.i
 #RUN sed -i 's:Riga:UTC:g' /etc/zabbix/apache.conf
 
 WORKDIR /usr/share/doc/zabbix-server-mysql/
-RUN service mysql start && zcat create.sql.gz | mysql -u root -pzabbix zabbixdb
+RUN service mysql start \
+&& zcat create.sql.gz | mysql -u root -pzabbix zabbixdb
 
 WORKDIR /etc/zabbix/
-#RUN \
-#sed -i 's:# DBHost=: DBHost=localhost:g' zabbix_server.conf \
-#&& sed -i 's: DBName=: DBName=zabbixdb:g' zabbix_server.conf \
-#&& sed -i 's:# DBPort=: DBPort=3306:g' zabbix_server.conf \
-#&& sed -i 's:# DBPassword=: DBPassword=zabbix:g' zabbix_server.conf
-
-#RUN service zabbix-server restart
-
-RUN service apache2 restart
-EXPOSE 80:80
+EXPOSE 8082:80
 
 ENTRYPOINT service mysql start && service zabbix-server start && service apache2 start && service zabbix-agent start && bash
 
