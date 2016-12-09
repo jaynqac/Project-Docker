@@ -9,7 +9,6 @@ myjira:
  tty: true
  ports: 
   - 8080:8080
- tty: true
 
 myjenkins:
  build: ./Jenkins
