@@ -45,7 +45,7 @@ WORKDIR /etc/apache2
 RUN sed -i '$ a ServerName localhost' apache2.conf
 
 WORKDIR /etc/zabbix
-RUN service apache2 restart && service zabbix-server restart
+#RUN service apache2 restart && service zabbix-server restart
 
 ENTRYPOINT service mysql start && service apache2 start && service zabbix-server start && service zabbix-agent start && bash
 
