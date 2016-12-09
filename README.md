@@ -23,3 +23,11 @@ Tools configured:
 - PostFix (incomplete)
 - UrbanCode Deploy (not started)
 - Puppet Enterprise (did not get to)
+
+5. Execute the following command to check the ports assigned to the tools or check the ports in the docker-compose.yml file
+
+$ docker ps
+
+6. To check that the container is running, enter the following URL template and replace your IP Address followed by the Port Number
+e.g. 
+http://YourIpAddressHere:PortNumber
