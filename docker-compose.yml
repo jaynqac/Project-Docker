@@ -2,7 +2,7 @@
 
 myjava:
  build: ./Java
-  tty: true
+ tty: true
 
 myjira:
  build: ./Jira
