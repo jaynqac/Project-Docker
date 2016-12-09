@@ -36,10 +36,10 @@ RUN service mysql start \
 && zcat create.sql.gz | mysql -u root -pzabbix zabbixdb
 
 WORKDIR /etc/zabbix/
-RUN sed -i  "s/# DBHost=/DBHost=localhost/g" zabbix_server.conf \
-&& sed -i "s/# DBUser=zabbix/DBUser=zabbixdb/g" zabbix_server.conf \
-&& sed -i  "s/# DBPassword=/DBPassword=zabbix/g" zabbix_server.conf \
-&& sed -i "s/# DBPort=/DBPort=3306/g"
+RUN sed -i 's/# DBHost=/DBHost=localhost/g' zabbix_server.conf \
+&& sed -i 's/# DBUser=zabbix/DBUser=zabbixdb/g' zabbix_server.conf \
+&& sed -i 's/# DBPassword=/DBPassword=zabbix/g' zabbix_server.conf \
+&& sed -i 's/# DBPort=/DBPort=3306/g' zabbix_server.conf
 
 RUN service apache2 restart && service zabbix-server restart
 
