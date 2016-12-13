@@ -10,12 +10,20 @@ myjira:
  ports: 
   - 8080:8080
 
+mynexus:
+ build: ./Nexus
+ links:
+  - myjava
+ ports: 
+  - 8081:8081
+ tty: true
+ 
 myjenkins:
  build: ./Jenkins
  links:
   - myjava
  ports:
-  - 8086:8080
+  - 8082:8080
  tty: true
 
 mytomcat:
@@ -23,14 +31,7 @@ mytomcat:
  links:
   - myjava
  ports:
-  - 8090:8080
+  - 8083:8080
  tty: true
 
-mynexus:
- build: ./Nexus
- links:
-  - myjava
- ports: 
-  - 8012:8081
- tty: true
- 
+
